@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">AndroidExam</string>
+    <string name="app_name">Study in DK</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_call">Call</string>
+    <string name="nav_search">search</string>
+    <string name="nav_mail">Email</string>
+    <string name="StudyConsultants">Contact Study Consultants</string>
+    <string name="Subject">Subject</string>
+    <string name="Message">Message</string>
+    <string name="SEND">SEND</string>
+    <string name="home_title">Study in Denmark</string>
+    <string name="howToApply">How to apply</string>
+    <string name="Fee_Scholarship">Fee_Scholarship</string>
+    <string name="login">login</string>
+    <string name="accomodation">Accomodation</string>
+    <string name="deadLine">Application deadline postponed. The new deadline is Sunday, March 22, 2020 at 12 noon.</string>
 </resources>

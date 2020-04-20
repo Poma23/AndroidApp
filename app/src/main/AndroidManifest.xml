@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.androidexam">
 
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Accomodation_fragment"></activity>
+        <activity android:name=".Search_fragment" />
+        <activity android:name=".Scholar" />
+        <activity android:name=".Login_fragment" />
+        <activity android:name=".Home_fragment" />
+        <activity android:name=".Email_fragment" />
+        <activity android:name=".Apply" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
