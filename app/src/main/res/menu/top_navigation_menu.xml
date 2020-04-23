@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+    <group android:checkableBehavior="single">     <!-- make sure to only select on item from this group-->
+
+        <item
+            android:id="@+id/navbar_login"
+            android:title="@string/login" />
+
+        <item
+            android:id="@+id/navbar_deadline"
+            android:title="@string/studyOption" />
+
+        <item
+            android:id="@+id/navbar_applicationDeadline"
+            android:title="@string/applicationDeadline" />
+
+        <item
+            android:id="@+id/navbar_livingWorking"
+            android:title="@string/livingWorkin" />
+
+        <item
+            android:id="@+id/navbar_teachinStyle"
+            android:title="@string/teachinStyle" />
+        <item
+            android:id="@+id/navbar_accomodation"
+            android:title="@string/accomodation" />
+
+    </group>
+
+</menu>

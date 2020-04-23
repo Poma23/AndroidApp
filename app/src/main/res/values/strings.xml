@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Study in DK</string>
+    <string name="app_name">Study in Denmark</string>
     <string name="nav_home">Home</string>
     <string name="nav_call">Call</string>
     <string name="nav_search">search</string>
@@ -11,7 +11,18 @@
     <string name="home_title">Study in Denmark</string>
     <string name="howToApply">How to apply</string>
     <string name="Fee_Scholarship">Fee_Scholarship</string>
-    <string name="login">login</string>
+    <string name="login">login/Register</string>
     <string name="accomodation">Accomodation</string>
     <string name="deadLine"> The new Application deadline is Sunday, March 22, 2020 at 12 noon.</string>
+    <string name="Register">Register</string>
+    <string name="studyOption">Study Options</string>
+    <string name="applicationDeadline">Applications Deadline</string>
+    <string name="livingWorkin">Living and working in DK</string>
+    <string name="teachinStyle">Teaching style in DK</string>
+    <string name="navigation_open_drawer">Open drawerK</string>
+    <string name="navigation_close_drawer">Close drawerK</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

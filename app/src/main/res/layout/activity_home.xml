@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/deadlineText"
@@ -8,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#000000"
     android:textAlignment="gravity"
-    tools:context=".Home_fragment">
+    >
 
 
     <TextView
@@ -30,7 +29,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/Button_apply"
         android:layout_width="125dp"
         android:layout_height="83dp"
@@ -62,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Button_apply"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/button_scholarship"
         android:layout_width="126dp"
         android:layout_height="87dp"
@@ -93,8 +92,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_scholarship"
         app:layout_constraintVertical_bias="0.0" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
