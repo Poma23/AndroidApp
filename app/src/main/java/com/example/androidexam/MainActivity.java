@@ -17,7 +17,7 @@ import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout drawerLayout;
 
@@ -26,25 +26,50 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar= findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);   //setting the toolbar in stead of actionbar
 
         drawerLayout = findViewById(R.id.drawerLayout);
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,
+        // to listen to our navigation events we need a reference to nv:
+        NavigationView navigationView = findViewById(R.id.navigationView);
+        navigationView.setNavigationItemSelectedListener(this); // therefor we implement the class with OnNavigationItemSelectedListener
+
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
                 R.string.navigation_open_drawer, R.string.navigation_close_drawer);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState(); // take care of rotating the hamburger
+
+        // where to start from
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, new Home_fragment()).commit();
+        navigationView.setCheckedItem(R.id.nav_home);
+    }
+
+    // here we pass the item that has been selected
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.nav_home:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, new Home_fragment()).commit();
+                break;
+
+            case R.id.navbar_accomodation:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, new Accomodation_fragment()).commit();
+                break;
+        }
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
     }
 
     @Override
     public void onBackPressed() {   // if the drawer is open , close it
-        if(drawerLayout.isDrawerOpen(GravityCompat.START))
-        {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
-        }
-        else
-        {
+        } else {
             super.onBackPressed();
         }
     }

@@ -12,86 +12,87 @@
 
     <TextView
         android:id="@+id/studyText"
-        android:layout_width="411dp"
-        android:layout_height="58dp"
-        android:layout_above="@+id/Button_apply"
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:text="@string/home_title"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="40sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageButton
-        android:id="@+id/Button_apply"
-        android:layout_width="125dp"
-        android:layout_height="83dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.171"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.165"
-        app:srcCompat="@drawable/apply" />
+        app:layout_constraintVertical_bias="0.05" />
 
     <TextView
         android:id="@+id/applyText"
-        android:layout_width="126dp"
-        android:layout_height="25dp"
+        android:layout_width="163dp"
+        android:layout_height="27dp"
         android:layout_above="@+id/button_scholarship"
         android:gravity="center"
         android:text="@string/howToApply"
         android:textColor="#FFFFFF"
-        android:textSize="12sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.168"
+        app:layout_constraintHorizontal_bias="0.104"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Button_apply"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.005" />
+
+    <ImageButton
+        android:id="@+id/Button_apply"
+        android:layout_width="163dp"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/apply"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.269" />
 
     <ImageButton
         android:id="@+id/button_scholarship"
-        android:layout_width="126dp"
-        android:layout_height="87dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
+        android:layout_width="163dp"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintHorizontal_bias="0.884"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.166"
+        app:layout_constraintVertical_bias="0.271"
         app:srcCompat="@drawable/happy" />
 
     <TextView
         android:id="@+id/ScholarText"
-        android:layout_width="126dp"
-        android:layout_height="25dp"
+        android:layout_width="163dp"
+        android:layout_height="28dp"
         android:layout_above="@+id/button_scholarship"
         android:gravity="center"
         android:text="@string/Fee_Scholarship"
         android:textColor="#FFFFFF"
-        android:textSize="12sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintHorizontal_bias="0.883"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_scholarship"
         app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--
+
+
+        android:adjustViewBounds="true"
+-->

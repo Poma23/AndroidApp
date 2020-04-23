@@ -8,8 +8,9 @@
     <string name="Subject">Subject</string>
     <string name="Message">Message</string>
     <string name="SEND">SEND</string>
-    <string name="home_title">Study in Denmark</string>
-    <string name="howToApply">How to apply</string>
+    <string name="home_title">Do you want to study in Denmark?</string>
+    <string name="head_title">Study in Denmark</string>
+    <string name="howToApply">Apply now</string>
     <string name="Fee_Scholarship">Fee_Scholarship</string>
     <string name="login">login/Register</string>
     <string name="accomodation">Accomodation</string>
