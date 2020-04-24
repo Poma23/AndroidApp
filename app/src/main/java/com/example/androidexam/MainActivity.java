@@ -8,6 +8,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,7 +18,8 @@ import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout drawerLayout;
 
@@ -41,24 +43,47 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState(); // take care of rotating the hamburger
 
-        // where to start from
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_container, new Home_fragment()).commit();
-        navigationView.setCheckedItem(R.id.nav_home);
+        if (savedInstanceState == null) {
+            // where to start from
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new Home_fragment()).commit();
+            navigationView.setCheckedItem(R.id.nav_home);
+        }
     }
 
     // here we pass the item that has been selected
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.nav_home:
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, new Home_fragment()).commit();
-                break;
 
             case R.id.navbar_accomodation:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragment_container, new Accomodation_fragment()).commit();
+                break;
+            case R.id.nav_home:
+
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, new Home_fragment()).commit();
+                break;
+            case R.id.navbar_login:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, new Login_fragment()).commit();
+                break;
+            case R.id.navbar_livingWorking:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, new LiveWork_fragment()).commit();
+                break;
+            case R.id.navbar_teachinStyle:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, new Teachingstyle_fragment()).commit();
+                break;
+            case R.id.navbar_studyOption:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, new StudyOption_fragment()).commit();
+                break;
+            case R.id.navbar_applicationDeadline:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, new ApplicationDeadline_fragment()).commit();
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);

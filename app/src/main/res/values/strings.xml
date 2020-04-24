@@ -13,6 +13,8 @@
     <string name="howToApply">Apply now</string>
     <string name="Fee_Scholarship">Fee_Scholarship</string>
     <string name="login">login/Register</string>
+    <string name="loginPage">login</string>
+    <string name="register">Register</string>
     <string name="accomodation">Accomodation</string>
     <string name="deadLine"> The new Application deadline is Sunday, March 22, 2020 at 12 noon.</string>
     <string name="Register">Register</string>

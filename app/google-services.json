@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "799299845125",
+    "firebase_url": "https://studyindenmark2020.firebaseio.com",
+    "project_id": "studyindenmark2020",
+    "storage_bucket": "studyindenmark2020.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799299845125:android:3ec9a21e0ef309c023706c",
+        "android_client_info": {
+          "package_name": "com.example.androidexam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "799299845125-r0n74dfjbgjrrqt7ehrbpgs2momoa0do.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdP-gxFZDO5zC3HJf69jxiXVYM5IGzKoA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "799299845125-r0n74dfjbgjrrqt7ehrbpgs2momoa0do.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
