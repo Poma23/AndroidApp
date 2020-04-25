@@ -12,11 +12,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.androidexam.R;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -86,6 +88,12 @@ public class MainActivity extends AppCompatActivity
             case R.id.navbar_applicationDeadline:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragment_container, new ApplicationDeadline_fragment()).commit();
+                break;
+            case R.id.navbar_logOut:
+                FirebaseAuth.getInstance().signOut();
+                Toast.makeText(getApplicationContext(), "Your are now logged out ", Toast.LENGTH_LONG).show();
+                //getSupportFragmentManager().beginTransaction()
+                  //      .replace(R.id.fragment_container, new Logout_fragment()).commit();
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);

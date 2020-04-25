@@ -30,22 +30,6 @@ public class Home_fragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        logout = view.findViewById(R.id.button_logout);
-
-
-        // temperary location for test logout:
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                Toast.makeText(getActivity(), "Your are now logged out ", Toast.LENGTH_SHORT).show();
-                getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, new Login_fragment()).commit();
-            }
-        });
-
-
-
         return view;
     }
 }

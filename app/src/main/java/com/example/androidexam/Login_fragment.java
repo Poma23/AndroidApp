@@ -33,63 +33,60 @@ public class Login_fragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_login, container, false);
 
-        view.findViewById(R.id.username_login);
-        view.findViewById(R.id.password_login);
-        view.findViewById(R.id.button_login).setOnClickListener(myListener);
-        view.findViewById(R.id.button_goToRegister).setOnClickListener(myListener);
-        firebaseAuth = FirebaseAuth.getInstance();
+       email_=  view.findViewById(R.id.username_login);
+       password_= view.findViewById(R.id.password_login);
+       loginButton_=  view.findViewById(R.id.button_login);//.setOnClickListener(myListener);
+       goToRegisterButton_= view.findViewById(R.id.button_goToRegister);//.setOnClickListener(myListener);
+       firebaseAuth = FirebaseAuth.getInstance();
 
+       loginButton_.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               String email = email_.getText().toString();
+               String password = password_.getText().toString();
+
+               //validate That feilds are not empty
+               if (TextUtils.isEmpty(email)) {
+                   email_.setError("Email is required !");
+                   return;
+               } else if (TextUtils.isEmpty(password)) {
+                   password_.setError("Password is required!");
+                   return;
+               } else if (password.length() < 6) {
+                   password_.setError("Password must be minimum 6 character");
+                   return;
+               }
+               //login
+
+
+               firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(
+                       new OnCompleteListener< AuthResult >() {
+                           @Override
+                           public void onComplete(@NonNull Task< AuthResult > task) {
+                               // is the logindsuccessful?
+                               if (task.isSuccessful()) {
+                                   Toast.makeText(getActivity(), "You are now logged in",
+                                           Toast.LENGTH_SHORT).show();
+                                   startActivity(new Intent(getActivity(), MainActivity.class));
+                               } else {
+                                   Toast.makeText(getActivity(), "Error" + task.getException(),
+                                           Toast.LENGTH_SHORT).show();
+                               }
+                           }
+                       });
+
+           }
+       });
+
+    goToRegisterButton_.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(getActivity(), Register.class);
+            startActivity(intent);
+        }
+    });
         return view;
 
     }
 
-    private final View.OnClickListener myListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.button_goToRegister:
-                    Intent intent = new Intent(getActivity(), Register.class);
-                    startActivity(intent);
-                    break;
-
-                case R.id.button_login:
-                    String email = email_.getText().toString();
-                    String password = password_.getText().toString();
-
-                    //validate That feilds are not empty
-                    if (TextUtils.isEmpty(email)) {
-                        email_.setError("Email is required !");
-                        return;
-                    } else if (TextUtils.isEmpty(password)) {
-                        password_.setError("Password is required!");
-                        return;
-                    } else if (password.length() < 6) {
-                        password_.setError("Password must be minimum 6 character");
-                        return;
-                    }
-                    //login
-
-
-                    firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(
-                            new OnCompleteListener< AuthResult >() {
-                                @Override
-                                public void onComplete(@NonNull Task< AuthResult > task) {
-                                    // is the logindsuccessful?
-                                    if (task.isSuccessful()) {
-                                        Toast.makeText(getActivity(), "You are now logged in",
-                                                Toast.LENGTH_SHORT).show();
-                                        startActivity(new Intent(getActivity(), MainActivity.class));
-                                    } else {
-                                        Toast.makeText(getActivity(), "Error" + task.getException(),
-                                                Toast.LENGTH_SHORT).show();
-                                    }
-                                }
-                            });
-                    break;
-
-
-            }
-        }
-    };
 }
-
