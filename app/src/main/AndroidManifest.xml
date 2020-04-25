@@ -2,8 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.androidexam">
 
-    <!--for firebase userAuthentication -->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <!--using internet-->
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -20,7 +21,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Register"></activity>
         <activity android:name=".Home_fragment" />
         <activity android:name=".Accomodation_fragment" />
         <activity android:name=".Search_fragment" />
@@ -28,6 +28,9 @@
         <activity android:name=".Login_fragment" />
         <activity android:name=".Email_fragment" />
         <activity android:name=".Apply" />
+        <activity android:name=".Register">
+
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"

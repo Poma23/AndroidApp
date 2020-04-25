@@ -6,7 +6,9 @@
 
     <group android:checkableBehavior="single">     <!-- make sure to only select on item from this group-->
 
-
+        <item
+            android:id="@+id/navbar_login"
+            android:title="@string/login" />
 
         <item
             android:id="@+id/navbar_studyOption"
@@ -31,9 +33,7 @@
         <item
             android:id="@+id/navbar_home"
             android:title="@string/nav_home" />
-        <item
-            android:id="@+id/navbar_login"
-            android:title="@string/login" />
+
 
 
     </group>

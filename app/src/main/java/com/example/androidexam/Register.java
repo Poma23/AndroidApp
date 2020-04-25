@@ -34,14 +34,12 @@ public class Register extends AppCompatActivity {
         password_ = findViewById(R.id.password_Register);
         register = findViewById(R.id.button_Register);
         firebaseAuth = FirebaseAuth.getInstance();
-/*
+
         //validate that the user is not already logedin
         if (firebaseAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), Home_fragment.class));
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
              finish();
         }
-
- */
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override

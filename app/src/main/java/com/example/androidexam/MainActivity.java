@@ -61,9 +61,11 @@ public class MainActivity extends AppCompatActivity
                         .replace(R.id.fragment_container, new Accomodation_fragment()).commit();
                 break;
             case R.id.nav_home:
+                Intent intent1 = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent1);
 
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, new Home_fragment()).commit();
+               // getSupportFragmentManager().beginTransaction()
+                 //       .replace(R.id.fragment_container, new Home_fragment()).commit();
                 break;
             case R.id.navbar_login:
                 getSupportFragmentManager().beginTransaction()

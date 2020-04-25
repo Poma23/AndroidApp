@@ -33,8 +33,8 @@ public class Login_fragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_login, container, false);
 
-        view.findViewById(R.id.username_login).setOnClickListener(myListener);
-        view.findViewById(R.id.password_login).setOnClickListener(myListener);
+        view.findViewById(R.id.username_login);
+        view.findViewById(R.id.password_login);
         view.findViewById(R.id.button_login).setOnClickListener(myListener);
         view.findViewById(R.id.button_goToRegister).setOnClickListener(myListener);
         firebaseAuth = FirebaseAuth.getInstance();
@@ -43,21 +43,14 @@ public class Login_fragment extends Fragment {
 
     }
 
-
-    private final View.OnClickListener myListener = new View.OnClickListener()
-    {
+    private final View.OnClickListener myListener = new View.OnClickListener() {
         @Override
-        public void onClick(View v)
-        {
-            switch (v.getId())
-            {
-
+        public void onClick(View v) {
+            switch (v.getId()) {
                 case R.id.button_goToRegister:
                     Intent intent = new Intent(getActivity(), Register.class);
                     startActivity(intent);
                     break;
-
-                 /*
 
                 case R.id.button_login:
                     String email = email_.getText().toString();
@@ -67,16 +60,16 @@ public class Login_fragment extends Fragment {
                     if (TextUtils.isEmpty(email)) {
                         email_.setError("Email is required !");
                         return;
-                    }
-                    if (TextUtils.isEmpty(password)) {
+                    } else if (TextUtils.isEmpty(password)) {
                         password_.setError("Password is required!");
                         return;
-                    }
-                    if (password.length() < 6) {
+                    } else if (password.length() < 6) {
                         password_.setError("Password must be minimum 6 character");
                         return;
                     }
                     //login
+
+
                     firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(
                             new OnCompleteListener< AuthResult >() {
                                 @Override
@@ -93,8 +86,8 @@ public class Login_fragment extends Fragment {
                                 }
                             });
                     break;
-                    
-                  */
+
+
             }
         }
     };
