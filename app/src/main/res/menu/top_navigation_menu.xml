@@ -16,7 +16,7 @@
 
         <item
             android:id="@+id/navbar_applicationDeadline"
-            android:title="@string/applicationDeadline" />
+            android:title="@string/nav_Deadline" />
 
         <item
             android:id="@+id/navbar_livingWorking"

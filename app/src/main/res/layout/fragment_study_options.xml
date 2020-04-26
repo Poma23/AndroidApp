@@ -5,16 +5,160 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_dark">
+    android:background="@drawable/purple"
+    >
 
-    <EditText
+
+    <TextView
+        android:id="@+id/StudyOptionTitle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Study options"
-        android:textSize="30dp"
+        android:layout_height="75dp"
+        android:fontFamily="@font/aclonica"
+        android:gravity="center"
+        android:text="@string/studyOption"
+        android:textColor="#FFFF00"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="-48dp"
-        android:gravity="center"/>
+        app:layout_constraintVertical_bias="0.024" />
 
+
+    <Button
+        android:id="@+id/button_UniList"
+        android:layout_width="245dp"
+        android:layout_height="wrap_content"
+        android:background="#DDE194"
+        android:fontFamily="@font/aclonica"
+        android:text="List of universities in Denmark"
+        android:textColor="#000000"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.885" />
+
+    <ImageButton
+        android:id="@+id/imageButton_university_colegae"
+        android:layout_width="140dp"
+        android:layout_height="130dp"
+        android:layout_gravity="center"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.827"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.247"
+        app:srcCompat="@drawable/apply" />
+
+    <ImageButton
+        android:id="@+id/imageButton_uni"
+        android:layout_width="140dp"
+        android:layout_height="130dp"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.168"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.247"
+        app:srcCompat="@drawable/scholarship" />
+
+    <ImageButton
+        android:id="@+id/imageButtonFineArt"
+        android:layout_width="140dp"
+        android:layout_height="130dp"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.169"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.617"
+        app:srcCompat="@drawable/images3" />
+
+    <ImageButton
+        android:id="@+id/imageButtonMaritimeEducation"
+        android:layout_width="140dp"
+        android:layout_height="130dp"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.826"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.617"
+        app:srcCompat="@drawable/images4" />
+
+    <TextView
+        android:id="@+id/textView_option1"
+        android:layout_width="142dp"
+        android:layout_height="21dp"
+        android:layout_below="@+id/imageButton_uni"
+        android:gravity="center"
+        android:text="Universities"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.163"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.422" />
+
+    <TextView
+        android:id="@+id/textView_option2"
+        android:layout_width="142dp"
+        android:layout_height="21dp"
+        android:gravity="center"
+        android:text="Maritime Education"
+        android:layout_below="@+id/imageButtonMaritimeEducation"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.825"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.726" />
+
+    <TextView
+        android:id="@+id/textView_option3"
+        android:layout_width="142dp"
+        android:layout_height="21dp"
+        android:gravity="center"
+        android:text="Artistic educations"
+        android:layout_below="@+id/imageButtonFineArt"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.171"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.726" />
+
+    <TextView
+        android:id="@+id/textView_option4"
+        android:layout_width="142dp"
+        android:layout_height="21dp"
+        android:layout_below="@+id/imageButton_university_colegae"
+        android:gravity="center"
+        android:text="University Colleges"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.825"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.422" />
 </androidx.constraintlayout.widget.ConstraintLayout>
