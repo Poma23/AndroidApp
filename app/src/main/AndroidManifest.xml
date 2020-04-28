@@ -11,17 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UniList"></activity>
+
+
+        <activity android:name=".UniList"/>
+
+
         <activity android:name=".Maritime" />
         <activity android:name=".Artistic" />
         <activity android:name=".University_collage" />
-        <activity android:name=".University" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity android:name=".Home_fragment" />
         <activity android:name=".Accomodation_fragment" />

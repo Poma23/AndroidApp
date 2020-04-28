@@ -22,7 +22,6 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
     private DrawerLayout drawerLayout;
 
     @Override
@@ -49,7 +48,7 @@ public class MainActivity extends AppCompatActivity
             // where to start from
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container, new Home_fragment()).commit();
-            navigationView.setCheckedItem(R.id.nav_home);
+            navigationView.setCheckedItem(R.id.navbar_home);
         }
     }
 
@@ -62,12 +61,9 @@ public class MainActivity extends AppCompatActivity
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragment_container, new Accomodation_fragment()).commit();
                 break;
-            case R.id.nav_home:
-                Intent intent1 = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent1);
-
-               // getSupportFragmentManager().beginTransaction()
-                 //       .replace(R.id.fragment_container, new Home_fragment()).commit();
+            case R.id.navbar_home:
+                getSupportFragmentManager().beginTransaction()
+                      .replace(R.id.fragment_container, new Home_fragment()).commit();
                 break;
             case R.id.navbar_login:
                 getSupportFragmentManager().beginTransaction()
@@ -77,10 +73,10 @@ public class MainActivity extends AppCompatActivity
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragment_container, new LiveWork_fragment()).commit();
                 break;
-            case R.id.navbar_teachinStyle:
+          /*  case R.id.navbar_teachinStyle:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragment_container, new Teachingstyle_fragment()).commit();
-                break;
+                break;*/
             case R.id.navbar_studyOption:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragment_container, new StudyOption_fragment()).commit();

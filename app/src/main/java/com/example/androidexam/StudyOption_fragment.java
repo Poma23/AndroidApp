@@ -40,10 +40,10 @@ public class StudyOption_fragment extends Fragment
         {
              switch (v.getId())
              {
-                 case R.id.imageButton_uni:
+              /*  case R.id.imageButton_uni:
                      Intent intent= new Intent(getActivity(), University.class);
                      startActivity(intent);
-                     break;
+                     break; */
 
                  case R.id.imageButton_university_colegae:
                      Intent intent2= new Intent(getActivity(), University_collage.class);
