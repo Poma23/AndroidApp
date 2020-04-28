@@ -11,7 +11,6 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.example.androidexam.Dao.UniListDao;
 import com.example.androidexam.Model.UniListModel;
-import com.example.androidexam.UniList;
 
 //version is very important, it has to be encreamentet by each change in database
 @Database(entities = UniListModel.class, version = 1)
@@ -53,16 +52,16 @@ public abstract class UniDatabase extends RoomDatabase {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            uniListDao.insert(new UniListModel("Via", "University Collage", "Horsens"));
-            uniListDao.insert(new UniListModel("Aalborg University ", "University", "Aalborg"));
-            uniListDao.insert(new UniListModel("Aarhus University", "University", "Aarhus"));
-            uniListDao.insert(new UniListModel("Copenhagen Business School", "University", "Copenhagen"));
-            uniListDao.insert(new UniListModel("IT University of Copenhagen ", "University", "Copenhagen"));
-            uniListDao.insert(new UniListModel("Roskilde University", "University", "Roskilde"));
-            uniListDao.insert(new UniListModel("Technical University of Denmark", "University", "Lyngby"));
-            uniListDao.insert(new UniListModel("University of Copenhagen ", "University", "Copenhagen"));
-            uniListDao.insert(new UniListModel("University of Southern Denmark", "University", "Odense"));
-            uniListDao.insert(new UniListModel("Via", "University Collage", "Aarhus"));
+            uniListDao.insert(new UniListModel("Via", "University Collage"));
+            uniListDao.insert(new UniListModel("Aalborg University ", "University"));
+            uniListDao.insert(new UniListModel("Aarhus University", "University"));
+            uniListDao.insert(new UniListModel("Copenhagen Business School", "University"));
+            uniListDao.insert(new UniListModel("IT University of Copenhagen ", "University"));
+            uniListDao.insert(new UniListModel("Roskilde University", "University"));
+            uniListDao.insert(new UniListModel("Technical University of Denmark", "University"));
+            uniListDao.insert(new UniListModel("University of Copenhagen ", "University"));
+            uniListDao.insert(new UniListModel("University of Southern Denmark", "University"));
+            uniListDao.insert(new UniListModel("Via", "University Collage"));
             return null;
         }
     }

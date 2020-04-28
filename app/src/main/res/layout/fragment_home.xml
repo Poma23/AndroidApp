@@ -5,7 +5,7 @@
     android:id="@+id/deadlineText"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
+    android:background="@color/Black"
     android:textAlignment="gravity">
 
 
@@ -18,7 +18,7 @@
         android:fontFamily="monospace"
         android:text="@string/home_title"
         android:textAlignment="center"
-        android:textColor="#FFF000"
+        android:textColor="@color/Light_Yellow"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

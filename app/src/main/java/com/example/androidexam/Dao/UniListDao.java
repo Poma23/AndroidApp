@@ -8,12 +8,11 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import com.example.androidexam.Model.UniListModel;
-import com.example.androidexam.UniList;
 
 import java.util.List;
 
 @Dao
-public interface UniListDao // here we dont provide any method in dao, Room will generate all the nessesary
+public interface UniListDao // here we dont provide any method, Room will generate all the nessesary
 {
     @Insert
     void insert(UniListModel uni);
@@ -27,7 +26,7 @@ public interface UniListDao // here we dont provide any method in dao, Room will
     @Query("DELETE FROM University")
     void deleteAllUnis();
 
-    @Query("SELECT * FROM University GROUP BY address")
+    @Query("SELECT * FROM University")
         //uni list will be updated by liveData,observers
     LiveData< List< UniListModel > > getAllUni();
 

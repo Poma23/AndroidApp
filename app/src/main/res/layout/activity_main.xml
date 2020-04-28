@@ -7,7 +7,7 @@
     style="@style/Widget.MaterialComponents.BottomAppBar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
+    android:background="@color/Black"
     android:fitsSystemWindows="true"
     tools:context=".MainActivity"
     tools:openDrawer="start">

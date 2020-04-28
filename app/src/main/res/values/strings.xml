@@ -33,4 +33,6 @@
     <string name="logout">Thank you for visiting Study in Denmark</string>
     <string name="app_deadline">Application deadline March 22, 2021</string>
     <string name="nav_Deadline">Application deadline</string>
+    <string name="Rv_title">Univerity</string>
+    <string name="listOfUni">List of universities in Denmark</string>
 </resources>

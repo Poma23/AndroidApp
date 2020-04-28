@@ -8,17 +8,17 @@ public class UniListModel {
 
     @PrimaryKey(autoGenerate = true)
     private int id;     // automatickly encrement
-    private String name;
-    private String type;
-    private String address;
+    private String Title;
+    private String Description;
 
-    public UniListModel(String name, String type, String address) {
-        this.name = name;
-        this.type = type;
-        this.address = address;
+
+    public UniListModel(String Title, String Description) {
+        this.Title = Title;
+        this.Description = Description;
     }
 
     public int getId() {
+
         return id;
     }
 
@@ -26,16 +26,12 @@ public class UniListModel {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return Title;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public String getAddress() {
-        return address;
+    public String getDescription() {
+        return Description;
     }
 
 
