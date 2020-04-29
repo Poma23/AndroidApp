@@ -6,12 +6,14 @@
 
     <group android:checkableBehavior="single">     <!-- make sure to only select on item from this group-->
 
-        <item
-            android:id="@+id/navbar_login"
-            android:title="@string/login" />
+
         <item
             android:id="@+id/navbar_home"
             android:title="@string/nav_home" />
+
+        <item
+            android:id="@+id/navbar_login"
+            android:title="@string/login" />
 
         <item
             android:id="@+id/navbar_studyOption"
@@ -25,22 +27,20 @@
             android:id="@+id/navbar_livingWorking"
             android:title="@string/livingWorkin" />
 
-      <!--
-        <item
-            android:id="@+id/navbar_teachinStyle"
-            android:title="@string/teachinStyle" />
-            -->
+        <!--
+          <item
+              android:id="@+id/navbar_teachinStyle"
+              android:title="@string/teachinStyle" />
+              -->
 
         <item
             android:id="@+id/navbar_accomodation"
             android:title="@string/accomodation" />
 
 
-
         <item
             android:id="@+id/navbar_logOut"
             android:title="@string/nav_logOut" />
-
 
 
     </group>

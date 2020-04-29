@@ -36,7 +36,8 @@ public class MainActivity extends AppCompatActivity
 
         // to listen to our navigation events we need a reference to nv:
         NavigationView navigationView = findViewById(R.id.navigationView);
-        navigationView.setNavigationItemSelectedListener(this); // therefor we implement the class with OnNavigationItemSelectedListener
+        navigationView.setNavigationItemSelectedListener(this);
+
 
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,

@@ -16,7 +16,7 @@ public class UniListRepository {
     private LiveData< List< UniListModel > > allUni;
 
     public UniListRepository(Application application) {
-        UniDatabase database = UniDatabase.getInstance(application);
+        UniDatabase database = UniDatabase.getInstance(application); // Room needs application
         uniListDao = database.uniListDao();
         allUni = uniListDao.getAllUni();
     }

@@ -17,6 +17,7 @@ import java.util.List;
 public class UniListViewModel extends AndroidViewModel {
 
     private UniListRepository uniListRepository;
+    
     private LiveData< List< UniListModel > > allUnies;
 
     public UniListViewModel(@NonNull Application application) {
