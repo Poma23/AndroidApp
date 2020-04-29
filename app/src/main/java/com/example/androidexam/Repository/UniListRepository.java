@@ -5,13 +5,15 @@ import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
-import com.example.androidexam.Dao.UniListDao;
+import Interfaces.UniListDao;
+
 import com.example.androidexam.Database.UniDatabase;
 import com.example.androidexam.Model.UniListModel;
 
 import java.util.List;
 
 public class UniListRepository {
+
     private UniListDao uniListDao;
     private LiveData< List< UniListModel > > allUni;
 

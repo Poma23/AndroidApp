@@ -45,7 +45,7 @@ public class Uni_Adaptor extends RecyclerView.Adapter< Uni_Adaptor.UniHolder > {
 
     public void setUni(List< UniListModel > list) {
         this.uniList = list;
-        notifyDataSetChanged(); // will be changed later
+        notifyDataSetChanged();
     }
 
     //create a viewholder class to hold the recycler view

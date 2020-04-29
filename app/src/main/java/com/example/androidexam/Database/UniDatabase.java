@@ -9,7 +9,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-import com.example.androidexam.Dao.UniListDao;
+import Interfaces.UniListDao;
 import com.example.androidexam.Model.UniListModel;
 
 //version is very important, it has to be encreamentet by each change in database
