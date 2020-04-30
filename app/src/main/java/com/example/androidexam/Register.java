@@ -20,6 +20,70 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Register extends AppCompatActivity {
 
+    EditText name_, email_, password_;
+    FirebaseAuth firebaseAuth;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_register);
+
+        email_ = findViewById(R.id.name_Register);
+        email_ = findViewById(R.id.email_register);
+        password_ = findViewById(R.id.password_Register);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+
+    }
+
+    public void createUser(View view) {
+        String email = email_.getText().toString();
+        String password = password_.getText().toString();
+
+        //validate The feilds
+        if (TextUtils.isEmpty(email)) {
+            email_.setError("Email is required !");
+            return;
+        } else if (TextUtils.isEmpty(password)) {
+            password_.setError("Password is required!");
+            return;
+        } else if (password.length() < 6) {
+            password_.setError("Password must be minimum 6 character");
+            return;
+        } else {
+            firebaseAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(new OnCompleteListener< AuthResult >() {
+                        @Override
+                        public void onComplete(@NonNull Task< AuthResult > task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(getApplicationContext(),
+                                        "User created successfully ", Toast.LENGTH_SHORT).show();
+                                finish();
+                                Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+                                startActivity(intent);
+
+                            } else {
+                                Toast.makeText(getApplicationContext(),
+                                        "User could not be created ", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+/*
     EditText name_,email_, password_;
     Button register;
     FirebaseAuth firebaseAuth;
@@ -85,4 +149,7 @@ public class Register extends AppCompatActivity {
 
 
     }
+    */
+
 }
+

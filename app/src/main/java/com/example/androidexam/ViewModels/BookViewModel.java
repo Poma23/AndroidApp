@@ -17,7 +17,7 @@ public class BookViewModel {
         return repository.getBook();
     }
 
-    public void updateBook(String s) {
-        repository.updateBook(s);
+    public void requestBook(String search) {
+        repository.requestBook(search);
     }
 }

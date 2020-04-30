@@ -12,7 +12,8 @@ import androidx.fragment.app.Fragment;
 
 public class Home_fragment extends Fragment {
     Button logout;
-        @Nullable
+
+    @Nullable
     @Override
     //show the fragment we are in:
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -21,11 +22,13 @@ public class Home_fragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         return view;
     }
+
+
+
 }
 
 
-
-        //***********************************************Video************************************************************/*
+//***********************************************Video************************************************************/*
         /*
 
          VideoView video;
@@ -40,42 +43,42 @@ public class Home_fragment extends Fragment {
         video.setVideoURI(uri);
         video.start();
         */
-        /**********************************************imagebutton*********************************************************
+/**********************************************imagebutton*********************************************************
 
-    /*
+ /*
 
-        view.findViewById(R.id.Button_apply).setOnClickListener(myListener);
-        view.findViewById(R.id.button_scholarship).setOnClickListener(myListener);
-        view.findViewById(R.id.button_logout).setOnClickListener(myListener);
+ view.findViewById(R.id.Button_apply).setOnClickListener(myListener);
+ view.findViewById(R.id.button_scholarship).setOnClickListener(myListener);
+ view.findViewById(R.id.button_logout).setOnClickListener(myListener);
 
-        return view;
-    }
+ return view;
+ }
 
-    private final View.OnClickListener myListener = new View.OnClickListener() {
-        public void onClick(View v) {
-            int id = v.getId();
-            switch (id) {
-                case R.id.Button_apply:
-                    Intent intent = new Intent(getActivity(), Apply.class);
-                    startActivity(intent);
-                    break;
-                case R.id.button_scholarship:       //openning activity from fragment
-                    Intent intent1 = new Intent(getActivity(), Scholar.class);
-                    startActivity(intent1);
-                    break;
-                case R.id.button_logout:            //openning a fragment from fragment
-                    FirebaseAuth.getInstance().signOut();
-                    getActivity().getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.fragment_container, new Login_fragment()).commit();
+ private final View.OnClickListener myListener = new View.OnClickListener() {
+ public void onClick(View v) {
+ int id = v.getId();
+ switch (id) {
+ case R.id.Button_apply:
+ Intent intent = new Intent(getActivity(), Apply.class);
+ startActivity(intent);
+ break;
+ case R.id.button_scholarship:       //openning activity from fragment
+ Intent intent1 = new Intent(getActivity(), Scholar.class);
+ startActivity(intent1);
+ break;
+ case R.id.button_logout:            //openning a fragment from fragment
+ FirebaseAuth.getInstance().signOut();
+ getActivity().getSupportFragmentManager().beginTransaction()
+ .replace(R.id.fragment_container, new Login_fragment()).commit();
 
 
-                    //Intent intent2 = new Intent(getActivity(),Login_fragment.class);
-                    //startActivity(intent2);
-                    // finish();
+ //Intent intent2 = new Intent(getActivity(),Login_fragment.class);
+ //startActivity(intent2);
+ // finish();
 
-            }
-        }
-    };
+ }
+ }
+ };
 
-*/
+ */
 

@@ -15,29 +15,29 @@
         android:layout_height="75dp"
         android:fontFamily="@font/aclonica"
         android:gravity="center"
-        android:text="Login"
+        android:text="@string/Login"
         android:textColor="@color/Light_Yellow"
         android:textSize="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.158" />
-
-    <Button
-        android:id="@+id/button_login"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:background="@color/Light_Yellow"
-        android:text="@string/loginPage"
-        android:textColor="@color/Black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.486" />
+        app:layout_constraintVertical_bias="0.039" />
+
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="140dp"
+        android:layout_height="55dp"
+        android:background="@color/Light_Yellow"
+        android:text="@string/Login"
+        android:textColor="@color/Black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.794"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.426" />
 
     <EditText
         android:id="@+id/username_login"
@@ -56,7 +56,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.303" />
+        app:layout_constraintVertical_bias="0.204" />
 
     <EditText
         android:id="@+id/password_login"
@@ -75,22 +75,35 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.389" />
+        app:layout_constraintVertical_bias="0.291" />
 
     <Button
         android:id="@+id/button_goToRegister"
-        android:layout_width="245dp"
-        android:layout_height="56dp"
+        android:layout_width="140dp"
+        android:layout_height="55dp"
         android:background="@color/Black"
         android:fontFamily="@font/aclonica"
-        android:text="Don't have an account? Register here ! "
-        android:textColor="@color/Light_Yellow"
-        android:textSize="14dp"
+        android:text="Sign Up"
+        android:textColor="@color/Red"
+        android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.21"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.662" />
+        app:layout_constraintVertical_bias="0.426" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/google_signin"
+        android:layout_width="297dp"
+        android:layout_height="47dp"
+        android:background="@color/White"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.692" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
