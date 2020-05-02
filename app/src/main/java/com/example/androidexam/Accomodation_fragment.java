@@ -31,7 +31,7 @@ public class Accomodation_fragment extends Fragment {
         viewPager = view.findViewById(R.id.viewPager);
         life = view.findViewById(R.id.tabViewId_life);
         work = view.findViewById(R.id.tabViewId_work);
-        map = view.findViewById(R.id.tabViewId_map);
+        map = view.findViewById(R.id.mapAPI);
 
         pageAdapter = new PageAdapter(getFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(pageAdapter);
