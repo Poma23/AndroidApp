@@ -1,8 +1,8 @@
 package com.example.androidexam;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class University_collage extends AppCompatActivity {
 

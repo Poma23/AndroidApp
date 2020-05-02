@@ -10,7 +10,7 @@
     <string name="SEND">SEND</string>
     <string name="home_title">Do you want to study in Denmark?</string>
     <string name="head_title">Study in Denmark</string>
-    <string name="howToApply">Apply now !</string>
+    <string name="howToApply">Applying through optagelse.dk</string>
     <string name="Fee_Scholarship">Fee_Scholarship</string>
     <string name="login">login/Register</string>
     <string name="loginPage">login</string>
@@ -36,4 +36,15 @@
     <string name="Rv_title">Univerity</string>
     <string name="listOfUni">List of universities in Denmark</string>
     <string name="Login">Login</string>
+    <string name="BookSearch">Book Search</string>
+    <string name="Search_">Search</string>
+    <string name="optagelseDk">Applications to undergradute higher education in Denmark
+        are assessed locally at the institutions but coordinated centrally in The Coordinated
+        Admission. Consequently prospective students do not apply directly to any single
+        educational institution, but through the national admission website:
+        www.optagelse.dk \n The Ministry of higher education in Denmark lines up the rules
+        for applying to a Danish Education with a foreign exam. However, it is the individual
+        educational institution that evaluates your application and assesses whether you meet
+        the entry requirements. Optagelse.dk is where you build your digital applications and
+        attach documents for assessment by the institutions to which you wish to apply.</string>
 </resources>

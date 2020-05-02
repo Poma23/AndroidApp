@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import com.example.androidexam.Adaptor.Uni_Adaptor;
+import com.example.androidexam.Adapter.Uni_Adapter;
 import com.example.androidexam.Model.UniListModel;
 import com.example.androidexam.ViewModels.UniListViewModel;
 
@@ -28,7 +28,7 @@ public class UniList extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
-        final Uni_Adaptor adaptor = new Uni_Adaptor();
+        final Uni_Adapter adaptor = new Uni_Adapter();
         recyclerView.setAdapter(adaptor);
 
         uniListViewModel = new ViewModelProvider(this).get(UniListViewModel.class);

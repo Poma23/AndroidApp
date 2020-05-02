@@ -42,6 +42,7 @@ public class Login_fragment extends Fragment {
     FirebaseAuth firebaseAuth;
     GoogleSignInClient mGoogleSignInClient;
     SignInButton signInButton;
+    int RC_SIGN_IN = 101;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -54,15 +55,6 @@ public class Login_fragment extends Fragment {
         password_ = view.findViewById(R.id.password_login);
         firebaseAuth = FirebaseAuth.getInstance();
         signInButton = view.findViewById(R.id.google_signin);
-
-        signInButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-                startActivityForResult(signInIntent, 101);
-            }
-        });
-
 
         goToRegisterButton_.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,13 +106,25 @@ public class Login_fragment extends Fragment {
             }
         });
 
+        //***********************'****Google signin***********************************************//
+
+
         // Configure Google Sign In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
 
-        mGoogleSignInClient = GoogleSignIn.getClient(getContext(), gso);
+        mGoogleSignInClient = GoogleSignIn.getClient(getActivity(),gso);
+
+
+        signInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+                startActivityForResult(signInIntent, RC_SIGN_IN);
+            }
+        });
 
         return view;
     }
@@ -131,12 +135,11 @@ public class Login_fragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
 
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
-        if (requestCode == 101) {
+        if (requestCode == RC_SIGN_IN) {
             Task< GoogleSignInAccount > task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
-
                 firebaseAuthWithGoogle(account);
 
             } catch (ApiException e) {
@@ -154,7 +157,7 @@ public class Login_fragment extends Fragment {
                             FirebaseUser user = firebaseAuth.getCurrentUser();
                             Intent intent = new Intent(getActivity(), ProfileActivity.class);
                             startActivity(intent);
-                            //getActivity().finish();
+                            getActivity().finish();
                             Toast.makeText(getActivity(), "User is successfully logged in",
                                     Toast.LENGTH_SHORT).show();
 

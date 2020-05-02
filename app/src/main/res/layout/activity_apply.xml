@@ -6,12 +6,48 @@
     android:layout_height="match_parent"
     >
 
-    <CalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
+    <TextView
+        android:id="@+id/applyNow_textview"
+        android:layout_width="347dp"
+        android:layout_height="64dp"
+        android:layout_margin="30dp"
+        android:gravity="center"
+        android:text="@string/howToApply"
+        android:textColor="@color/Light_Yellow"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <ImageButton
+        android:id="@+id/imageButton_optagelse"
+        android:layout_width="233dp"
+        android:layout_height="89dp"
+        android:padding="0dp"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.204"
+        app:srcCompat="@drawable/optagelse" />
+
+    <TextView
+        android:id="@+id/optagelseText"
+        android:layout_width="363dp"
+        android:layout_height="460dp"
+        android:layout_margin="8dp"
+        android:text="@string/optagelseDk"
+
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.94" />
 </androidx.constraintlayout.widget.ConstraintLayout>
