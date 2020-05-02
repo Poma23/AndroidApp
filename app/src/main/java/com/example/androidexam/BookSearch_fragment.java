@@ -19,7 +19,7 @@ import com.example.androidexam.Model.VolumeResponse;
 import com.example.androidexam.ViewModels.GoogleAPI_ViewModel;
 import com.google.android.material.textfield.TextInputEditText;
 
-public class LiveWork_fragment extends Fragment {
+public class BookSearch_fragment extends Fragment {
 
     private GoogleAPI_ViewModel viewModel;
     private GoogleAPI_Adapter adapter;

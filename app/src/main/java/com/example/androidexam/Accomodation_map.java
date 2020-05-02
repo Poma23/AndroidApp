@@ -14,11 +14,11 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class Accomodation_tab3 extends Fragment implements OnMapReadyCallback {
+public class Accomodation_map extends Fragment  {
     GoogleMap mapAPI;
     SupportMapFragment mapFragment;
 
-    public Accomodation_tab3() {
+    public Accomodation_map() {
         // Required empty public constructor
     }
 
@@ -26,17 +26,17 @@ public class Accomodation_tab3 extends Fragment implements OnMapReadyCallback {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_accomodation_tab3, container, false);
+        View view = inflater.inflate(R.layout.fragment_accomodation_map, container, false);
 
-        mapFragment = (SupportMapFragment) getFragmentManager().findFragmentById(R.id.mapAPI);
-        mapFragment.getMapAsync(this);
+        mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapAPI);
+        mapFragment.getMapAsync((OnMapReadyCallback) this);
 
 
         return view;
     }
 
     // get location from google map
-    @Override
+
     public void onMapReady(GoogleMap googleMap) {
         mapAPI = googleMap;
         LatLng Denmark= new LatLng(55.980934, 10.012116);

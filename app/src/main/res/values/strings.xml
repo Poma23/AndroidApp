@@ -47,4 +47,14 @@
         educational institution that evaluates your application and assesses whether you meet
         the entry requirements. Optagelse.dk is where you build your digital applications and
         attach documents for assessment by the institutions to which you wish to apply.</string>
+    <string name="Visas">Permits and Visas</string>
+    <string name="health_Saftey">Health and Safety</string>
+    <string name="bookSearch">Book Search</string>
+    <string name="text_life">Denmark is located in northern Europe and is part of Scandinavia. Denmark consists of the Jutland peninsula, the larger islands of Zealand, Funen, and Lolland-Falster and 429 other named islands between the North Sea and the Baltic Sea, 72 of which are inhabited. When you live in Denmark, you can enjoy a balanced lifestyle with time for both work and leisure. And while there is a strong respect for the community, there is also a strong emphasis on personal freedom and the opportunity to pursue and fulfill individual potential.</string>
+    <string name="LivinginDenmark">Living in Denmark</string>
+    <string name="Text_Health">Denmark is one of the world’s safest countries. Crime rates are low – plus you get access to a comprehensive public healthcare system.</string>
+    <string name="healtcare">As a student and resident in Denmark you will have access to the Danish healthcare system. Here is what you need to know. The Danish healthcare system offers equal and universal access for all residents. As an international student and resident in Denmark you will have access to free medical treatments with some exceptions, such as dental care and physiotherapy.</string>
+    <string name="TextVisa">We want to make it easy for you to come to Denmark and experience our first-class education. But obviously, there are some official forms to be filled first. Hopefully, this shouldn’t prove too complicated.</string>
+    <string name="cpr">How do I get a Danish ID-number? (CPR)</string>
+    <string name="vss">"To obtain your personal ID-number as an international student in Denmark you will need to register with the Danish Civil Registration System to obtain your personal ID number ('CPR number') while studying in Denmark.  Once registered you will be allocated a Civil Personal Registration (CPR) number. The CPR number is unique to the person and is used in Denmark as an ID number.  Almost all public authorities use the CPR registry system to e.g. avoid duplicate registration and errors with regards to a person's identity. "</string>
 </resources>

@@ -13,11 +13,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Health"></activity>
+        <activity android:name=".Visa" />
 
-        <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="@string/map_Key"></meta-data>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_Key" />
 
-        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".ProfileActivity" />
         <activity android:name=".Register" />
         <activity android:name=".UniList" />
         <activity android:name=".Maritime" />

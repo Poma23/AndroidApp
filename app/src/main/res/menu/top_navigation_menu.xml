@@ -24,8 +24,8 @@
             android:title="@string/nav_Deadline" />
 
         <item
-            android:id="@+id/navbar_livingWorking"
-            android:title="@string/livingWorkin" />
+            android:id="@+id/navbar_bookSearch"
+            android:title="@string/bookSearch" />
 
         <!--
           <item
@@ -35,7 +35,7 @@
 
         <item
             android:id="@+id/navbar_accomodation"
-            android:title="@string/accomodation" />
+            android:title="@string/livingWorkin" />
 
 
         <item

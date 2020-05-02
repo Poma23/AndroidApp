@@ -6,17 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
-import com.example.androidexam.R;
-import com.google.android.material.bottomappbar.BottomAppBar;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -70,9 +64,9 @@ public class MainActivity extends AppCompatActivity
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragment_container, new Login_fragment()).commit();
                 break;
-            case R.id.navbar_livingWorking:
+            case R.id.navbar_bookSearch:
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, new LiveWork_fragment()).commit();
+                        .replace(R.id.fragment_container, new BookSearch_fragment()).commit();
                 break;
           /*  case R.id.navbar_teachinStyle:
                 getSupportFragmentManager().beginTransaction()

@@ -5,9 +5,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.androidexam.Accomodation_tab1;
-import com.example.androidexam.Accomodation_tab2;
-import com.example.androidexam.Accomodation_tab3;
+import com.example.androidexam.Accomodation_life;
+import com.example.androidexam.Accomodation_work;
+import com.example.androidexam.Accomodation_map;
 
 public class PageAdapter extends FragmentPagerAdapter {
     int numberOfTabs;
@@ -23,11 +23,11 @@ public class PageAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                return new Accomodation_tab1();
+                return new Accomodation_life();
             case 1:
-                return  new Accomodation_tab2();
+                return  new Accomodation_work();
             case 2:
-                return new Accomodation_tab3();
+                return new Accomodation_map();
             default:
                 return null;
         }

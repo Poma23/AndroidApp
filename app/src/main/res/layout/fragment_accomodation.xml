@@ -12,9 +12,9 @@
         android:id="@+id/tablayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#8C77AC"
+        android:background="@color/Black"
         app:tabSelectedTextColor="#EFE43B"
-        app:tabTextColor="@color/Black"
+        app:tabTextColor="@color/White"
 
         >
 
