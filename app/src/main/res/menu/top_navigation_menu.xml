@@ -23,19 +23,14 @@
             android:id="@+id/navbar_applicationDeadline"
             android:title="@string/nav_Deadline" />
 
-        <item
-            android:id="@+id/navbar_bookSearch"
-            android:title="@string/bookSearch" />
-
-        <!--
-          <item
-              android:id="@+id/navbar_Pouneh"
-              android:title="@string/teachinStyle" />
-              -->
 
         <item
             android:id="@+id/navbar_accomodation"
             android:title="@string/livingWorkin" />
+
+        <item
+            android:id="@+id/navbar_bookSearch"
+            android:title="@string/bookSearch" />
 
 
         <item

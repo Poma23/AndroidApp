@@ -33,7 +33,7 @@ public class Accomodation_fragment extends Fragment {
         work = view.findViewById(R.id.tabViewId_work);
         map = view.findViewById(R.id.mapAPI);
 
-        pageAdapter = new PageAdapter(getFragmentManager(), tabLayout.getTabCount());
+        pageAdapter = new PageAdapter(getChildFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(pageAdapter);
 
         //setup the tablayout to be cliked on

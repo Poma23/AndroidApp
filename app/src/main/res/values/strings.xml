@@ -34,7 +34,7 @@
     <string name="app_deadline">Application deadline March 22, 2021</string>
     <string name="nav_Deadline">Application deadline</string>
     <string name="Rv_title">Univerity</string>
-    <string name="listOfUni">List of universities in Denmark</string>
+    <string name="listOfUni">Danish university PhD positions</string>
     <string name="Login">Login</string>
     <string name="BookSearch">Book Search</string>
     <string name="Search_">Search</string>
@@ -57,4 +57,5 @@
     <string name="TextVisa">We want to make it easy for you to come to Denmark and experience our first-class education. But obviously, there are some official forms to be filled first. Hopefully, this shouldn’t prove too complicated.</string>
     <string name="cpr">How do I get a Danish ID-number? (CPR)</string>
     <string name="vss">"To obtain your personal ID-number as an international student in Denmark you will need to register with the Danish Civil Registration System to obtain your personal ID number ('CPR number') while studying in Denmark.  Once registered you will be allocated a Civil Personal Registration (CPR) number. The CPR number is unique to the person and is used in Denmark as an ID number.  Almost all public authorities use the CPR registry system to e.g. avoid duplicate registration and errors with regards to a person's identity. "</string>
+    <string name="workindenmark">To have a good start in your working life in Denmark, it is a good idea to get to know how the Danish labour market works, including formalities, working conditions and workplace culture.  It may be structured and work differently than what you are used to.  But there is no reason to worry, since the job satisfaction rating in Denmark is among the highest in Europe.  The Danish labour market is internationally known for its ‘flexicurity model’. A mix of the terms ‘flexibility’ and ‘security’, this concept refers to a welfare state model that combines a flexible labour market with social security for all workers. Most labour market issues are settled by employers and employees rather than by law. Employees choose a union representative who undertakes local negotiations on wages and other work conditions with the employer. In many work places, professional organisations play an active role and approximately six out of ten employees are members of a trade union.</string>
 </resources>

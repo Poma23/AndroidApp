@@ -14,7 +14,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class Accomodation_map extends Fragment  {
+public class Accomodation_map extends Fragment implements OnMapReadyCallback  {
     GoogleMap mapAPI;
     SupportMapFragment mapFragment;
 
@@ -28,7 +28,7 @@ public class Accomodation_map extends Fragment  {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_accomodation_map, container, false);
 
-        mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapAPI);
+        mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapCounter);
         mapFragment.getMapAsync((OnMapReadyCallback) this);
 
 

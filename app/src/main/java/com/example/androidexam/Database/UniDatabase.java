@@ -9,8 +9,9 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-import Interfaces.UniListDao;
 import com.example.androidexam.Model.UniListModel;
+
+import Interfaces.UniListDao;
 
 //version is very important, it has to be encreamentet by each change in database
 @Database(entities = UniListModel.class, version = 1)
@@ -52,11 +53,7 @@ public abstract class UniDatabase extends RoomDatabase {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            uniListDao.insert(new UniListModel("Via University Collage", "VIA University College is Denmark's largest university " +
-                    "college with 8 modern campuses in the Central Denmark Region. VIA offers a variety of degree programmes in engineering, health, " +
-                    "social education, construction, design, business and animation. Our 20 research centres carry out applied research in " +
-                    "cooperation with public and private partners in Denmark and internationally to ensure that our programmes are based on the " +
-                    "latest knowledge in their corresponding fields"));
+
             uniListDao.insert(new UniListModel("Aalborg University (AAU) ", "Aalborg University (AAU) has been providing students " +
                     "with academic excellence, cultural engagement and personal development since its inception in 1974. It offers education " +
                     "and research within the fields of natural sciences, social sciences, humanities, technical and health sciences"));
@@ -84,7 +81,7 @@ public abstract class UniDatabase extends RoomDatabase {
             uniListDao.insert(new UniListModel("University of Southern Denmark", "The University of Southern Denmark (SDU) offers " +
                     "world class education and is committed to an international perspective, at all levels. The largest campus is located in the " +
                     "city of Odense (Funen) and other campuses are located in the cities of Kolding, Esbjerg, Sønderborg (Jutland) and Slagelse (Zealand)."));
-            uniListDao.insert(new UniListModel("Via", "University Collage"));
+
             return null;
         }
     }

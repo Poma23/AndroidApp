@@ -1,5 +1,10 @@
 package com.example.androidexam;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,16 +12,13 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.os.Bundle;
-import android.view.MenuItem;
-import android.widget.Toast;
-
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawerLayout;
+    FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);   //setting the toolbar in stead of actionbar
 
         drawerLayout = findViewById(R.id.drawerLayout);
+        firebaseAuth = FirebaseAuth.getInstance();
 
         // to listen to our navigation events we need a reference to nv:
         NavigationView navigationView = findViewById(R.id.navigationView);
@@ -81,8 +84,17 @@ public class MainActivity extends AppCompatActivity
                         .replace(R.id.fragment_container, new ApplicationDeadline_fragment()).commit();
                 break;
             case R.id.navbar_logOut:
-                FirebaseAuth.getInstance().signOut();
-                Toast.makeText(getApplicationContext(), "Your are now logged out ", Toast.LENGTH_LONG).show();
+                if(firebaseAuth.getCurrentUser() != null) {
+                    firebaseAuth.signOut();
+                    finish();
+                    Toast.makeText(getApplicationContext(), " Thank you for visiting Study in Denmark", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
+                }else
+                {Toast.makeText(getApplicationContext(), " You are not logged in yet", Toast.LENGTH_SHORT).show();}
+
+               // FirebaseAuth.getInstance().signOut();
+               // Toast.makeText(getApplicationContext(), "Your are now logged out ", Toast.LENGTH_LONG).show();
                 //getSupportFragmentManager().beginTransaction()
                   //      .replace(R.id.fragment_container, new Logout_fragment()).commit();
                 break;
