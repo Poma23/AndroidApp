@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/BookSearch"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:textColor="@color/Light_Yellow"
+        android:textSize="30sp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter a book"
+            android:layout_margin="10dp"
+            android:background="@color/White"
+            android:textColor="@color/Black"
+            android:textColorHint="@color/Black"
+            android:gravity="center"
+            android:id="@+id/fragment_booksearch_keyword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/fragment_booksearch_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/Search_"
+        android:textColor="@color/Light_Yellow"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:id="@+id/fragment_booksearch_searchResultsRecyclerView" />
+
+</LinearLayout>

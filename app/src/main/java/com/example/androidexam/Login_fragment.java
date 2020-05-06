@@ -2,240 +2,132 @@ package com.example.androidexam;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.SignInButton;
-import com.google.android.gms.common.api.ApiException;
+import com.firebase.ui.auth.AuthUI;
+import com.firebase.ui.auth.IdpResponse;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.GoogleAuthProvider;
 
-import java.util.concurrent.Executor;
+import java.util.Arrays;
+import java.util.List;
 
-public class Login_fragment extends Fragment {
-
-    Button loginButton_, goToRegisterButton_;
-    EditText email_, password_;
-    FirebaseAuth firebaseAuth;
-    GoogleSignInClient mGoogleSignInClient;
-    SignInButton signInButton;
-    int RC_SIGN_IN = 101;
+public class Login_fragment  extends Fragment {
 
 
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_login, container, false);
+    private FirebaseAuth _mFirebaseAuth;
+    private FirebaseUser user;
+    private FirebaseAuth.AuthStateListener _mAuthListener;
+    public static final int RC_SIGN_IN= 1;
 
-        loginButton_ = view.findViewById(R.id.button_login);
-        goToRegisterButton_ = view.findViewById(R.id.button_goToRegister);
-        email_ = view.findViewById(R.id.username_login);
-        password_ = view.findViewById(R.id.password_login);
-        firebaseAuth = FirebaseAuth.getInstance();
-        signInButton = view.findViewById(R.id.google_signin);
 
-        goToRegisterButton_.setOnClickListener(new View.OnClickListener() {
+
+    // Choose authentication providers
+    List< AuthUI.IdpConfig > providers= Arrays.asList(
+            new AuthUI.IdpConfig.EmailBuilder().build(),
+            new AuthUI.IdpConfig.PhoneBuilder().build(),
+            new AuthUI.IdpConfig.GoogleBuilder().build()
+    );
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        //setContentView(R.layout.activity_main);
+        _mFirebaseAuth = FirebaseAuth.getInstance();
+        user = _mFirebaseAuth.getCurrentUser();
+
+        _mAuthListener = new FirebaseAuth.AuthStateListener(){
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), Register.class);
-                startActivity(intent);
-            }
-        });
 
-        loginButton_.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String email = email_.getText().toString();
-                String password = password_.getText().toString();
-
-                //validate That feilds are not empty
-                if (TextUtils.isEmpty(email)) {
-                    email_.setError("Email is required !");
-                    return;
-                } else if (TextUtils.isEmpty(password)) {
-                    password_.setError("Password is required!");
-                    return;
-                } else if (password.length() < 6) {
-                    password_.setError("Password must be minimum 6 character");
-                    return;
-                } else {
-
-                    firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(
-                            new OnCompleteListener< AuthResult >() {
-                                @Override
-                                public void onComplete(@NonNull Task< AuthResult > task) {
-                                    // is the logindsuccessful?
-                                    if (task.isSuccessful()) {
-                                        Toast.makeText(getActivity(), "The user is successfully logged in",
-                                                Toast.LENGTH_SHORT).show();
-                                        getActivity().finish();
-
-                                        startActivity(new Intent(getActivity(), ProfileActivity.class));
-                                    } else {
-                                        Toast.makeText(getActivity(), "Error" + task.getException(),
-                                                Toast.LENGTH_SHORT).show();
-                                    }
-                                }
-                            });
+            public void onAuthStateChanged(FirebaseAuth firebaseAuth){
+                // check if  the user is signed in
+                if( user != null){
+                    Toast.makeText(getContext(),"You are already logged in",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getContext(), MainActivity.class));
+                }else{
+                    // Create and launch sign-in intent
+                    startActivityForResult(
+                            AuthUI.getInstance().
+                                    createSignInIntentBuilder().
+                                    setAvailableProviders(providers).setIsSmartLockEnabled(false).
+                                    build(), RC_SIGN_IN);
 
                 }
 
-
             }
-        });
+        };
+    }
 
-        //***********************'****Google signin***********************************************//
+    @Override
+    public void onResume() {
+        super.onResume();
+        _mFirebaseAuth.addAuthStateListener(_mAuthListener);
+    }
 
-
-        // Configure Google Sign In
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail()
-                .build();
-
-        mGoogleSignInClient = GoogleSignIn.getClient(getActivity(),gso);
-
-
-        signInButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-                startActivityForResult(signInIntent, RC_SIGN_IN);
-            }
-        });
-
-        return view;
+    @Override
+    public void onPause() {
+        super.onPause();
+        _mFirebaseAuth.removeAuthStateListener(_mAuthListener);
     }
 
 
-    @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
-            Task< GoogleSignInAccount > task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            try {
-                // Google Sign In was successful, authenticate with Firebase
-                GoogleSignInAccount account = task.getResult(ApiException.class);
-                firebaseAuthWithGoogle(account);
+            IdpResponse response = IdpResponse.fromResultIntent(data);
 
-            } catch (ApiException e) {
-            }
+        //    if (resultCode == RESULT_OK) {
+                // Successfully signed in
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                startActivity(new Intent(getContext(), Home_fragment.class));
+                Toast.makeText(getContext(),"You are now signed in",
+                        Toast.LENGTH_LONG).show();
+                // ...
+        //    } else {
+                // Sign in failed.
+        //        startActivity(new Intent(getActivity(), Login_fragment.class));
+        //        Toast.makeText(getContext(),"You are now signed in failed",
+        //                Toast.LENGTH_LONG).show();
+          //  }
         }
     }
 
-    private void firebaseAuthWithGoogle(GoogleSignInAccount account) {
-        AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
-        firebaseAuth.signInWithCredential(credential)
-                .addOnCompleteListener((Executor) this, new OnCompleteListener< AuthResult >() {
+    public void signOut(View view) {
+        AuthUI.getInstance().signOut(getContext()).addOnCompleteListener(
+                new OnCompleteListener< Void >() {
                     @Override
-                    public void onComplete(@NonNull Task< AuthResult > task) {
-                        if (task.isSuccessful()) {
-                            FirebaseUser user = firebaseAuth.getCurrentUser();
-                            Intent intent = new Intent(getActivity(), ProfileActivity.class);
-                            startActivity(intent);
-                            getActivity().finish();
-                            Toast.makeText(getActivity(), "User is successfully logged in",
-                                    Toast.LENGTH_SHORT).show();
-
-                        } else {
-                            Toast.makeText(getActivity(), "User could not log in",
-                                    Toast.LENGTH_SHORT).show();
-                        }
-
+                    public void onComplete(@NonNull Task< Void > task) {
+                        Toast.makeText(getContext(),"You are now signed out",
+                                Toast.LENGTH_LONG).show();
+                        //finish();
                     }
-
-                });
+                }
+        );
     }
-
-
-
-
-
- /*
-
-    EditText email_, password_;
-    Button loginButton_, goToRegisterButton_;
-    FirebaseAuth firebaseAuth;
-
-
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_login, container, false);
-
-       email_=  view.findViewById(R.id.username_login);
-       password_= view.findViewById(R.id.password_login);
-       loginButton_=  view.findViewById(R.id.button_login);//.setOnClickListener(myListener);
-       goToRegisterButton_= view.findViewById(R.id.button_goToRegister);//.setOnClickListener(myListener);
-       firebaseAuth = FirebaseAuth.getInstance();
-
-       loginButton_.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               String email = email_.getText().toString();
-               String password = password_.getText().toString();
-
-               //validate That feilds are not empty
-               if (TextUtils.isEmpty(email)) {
-                   email_.setError("Email is required !");
-                   return;
-               } else if (TextUtils.isEmpty(password)) {
-                   password_.setError("Password is required!");
-                   return;
-               } else if (password.length() < 6) {
-                   password_.setError("Password must be minimum 6 character");
-                   return;
-               }
-               //login
-
-
-               firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(
-                       new OnCompleteListener< AuthResult >() {
-                           @Override
-                           public void onComplete(@NonNull Task< AuthResult > task) {
-                               // is the logindsuccessful?
-                               if (task.isSuccessful()) {
-                                   Toast.makeText(getActivity(), "You are now logged in",
-                                           Toast.LENGTH_SHORT).show();
-                                   startActivity(new Intent(getActivity(), MainActivity.class));
-                               } else {
-                                   Toast.makeText(getActivity(), "Error" + task.getException(),
-                                           Toast.LENGTH_SHORT).show();
-                               }
-                           }
-                       });
-
-           }
-       });
-
-    goToRegisterButton_.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent intent = new Intent(getActivity(), Register.class);
-            startActivity(intent);
-        }
-    });
-        return view;
-
-    }
-*/
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

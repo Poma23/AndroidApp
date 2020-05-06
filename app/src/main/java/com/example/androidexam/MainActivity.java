@@ -1,6 +1,5 @@
 package com.example.androidexam;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -12,6 +11,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.firebase.ui.auth.AuthUI;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -84,19 +86,19 @@ public class MainActivity extends AppCompatActivity
                         .replace(R.id.fragment_container, new ApplicationDeadline_fragment()).commit();
                 break;
             case R.id.navbar_logOut:
-                if(firebaseAuth.getCurrentUser() != null) {
-                    firebaseAuth.signOut();
-                    finish();
-                    Toast.makeText(getApplicationContext(), " Thank you for visiting Study in Denmark", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(intent);
+                if(AuthUI.getInstance() != null) {
+                    AuthUI.getInstance().signOut(this).addOnCompleteListener(
+                            new OnCompleteListener< Void >() {
+                                @Override
+                                public void onComplete(@NonNull Task< Void > task) {
+                                    Toast.makeText(getApplicationContext(),"You are now signed out",
+                                            Toast.LENGTH_LONG).show();
+                                    finish();
+                                }
+                            }
+                    );
                 }else
                 {Toast.makeText(getApplicationContext(), " You are not logged in yet", Toast.LENGTH_SHORT).show();}
-
-               // FirebaseAuth.getInstance().signOut();
-               // Toast.makeText(getApplicationContext(), "Your are now logged out ", Toast.LENGTH_LONG).show();
-                //getSupportFragmentManager().beginTransaction()
-                  //      .replace(R.id.fragment_container, new Logout_fragment()).commit();
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);
