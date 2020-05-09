@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.navbar_bookSearch:
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, new BookSearch_fragment()).commit();
+                        .replace(R.id.fragment_container, new GoogleBookSearch()).commit();
                 break;
           /*  case R.id.navbar_teachinStyle:
                 getSupportFragmentManager().beginTransaction()

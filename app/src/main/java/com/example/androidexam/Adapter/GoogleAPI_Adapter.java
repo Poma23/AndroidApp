@@ -50,7 +50,7 @@ public class GoogleAPI_Adapter extends RecyclerView.Adapter< GoogleAPI_Adapter.B
 
     @Override
     public int getItemCount() {
-        return 0;
+        return results.size();
     }
 
     public void setResults(List< Volume > results) {

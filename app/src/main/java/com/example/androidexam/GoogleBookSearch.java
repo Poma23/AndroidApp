@@ -19,7 +19,7 @@ import com.example.androidexam.Model.VolumeResponse;
 import com.example.androidexam.ViewModels.GoogleAPI_ViewModel;
 import com.google.android.material.textfield.TextInputEditText;
 
-public class BookSearch_fragment extends Fragment {
+public class GoogleBookSearch extends Fragment {
 
     private GoogleAPI_ViewModel viewModel;
     private GoogleAPI_Adapter adapter;
@@ -30,7 +30,7 @@ public class BookSearch_fragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_live_work, container, false);
+        View view = inflater.inflate(R.layout.fragment_booksearch, container, false);
 
 
         recyclerView = view.findViewById(R.id.fragment_booksearch_searchResultsRecyclerView);
