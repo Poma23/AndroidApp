@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,53 +9,40 @@
     android:layout_marginLeft="8dp"
     android:layout_marginRight="8dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
-        <ImageView
-            android:id="@+id/book_item_smallThumbnail"
-            android:layout_width="80dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginBottom="623dp"
-            android:layout_above ="@+id/book_item_rightLayout"
+     <TextView
+            android:id="@+id/book_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:textSize="20dp"
+            android:textColor="@color/Rello"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.13"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.34" />
+            app:layout_constraintVertical_bias="0.023" />
 
-        <LinearLayout
-            android:id="@+id/book_item_rightLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:layout_marginEnd="391dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+    <TextView
+        android:id="@+id/book_item_description"
+        android:layout_width="197dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.414"
+        app:layout_constraintStart_toEndOf="@+id/book_item_smallThumbnail"
+        app:layout_constraintTop_toBottomOf="@+id/book_item_title"
+        app:layout_constraintVertical_bias="0.1" />
 
-            <TextView
-                android:id="@+id/book_item_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:id="@+id/book_item_description"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-
-        </LinearLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/book_item_smallThumbnail"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/book_item_title"
+        app:layout_constraintVertical_bias="0.027" />
 
 
-
-
-</androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
