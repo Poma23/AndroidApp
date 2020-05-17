@@ -13,18 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Health"></activity>
-        <activity android:name=".Visa" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/map_Key" />
-
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".Register" />
-        <activity android:name=".UniList" />
-        <activity android:name=".Maritime" />
-        <activity android:name=".University_collage" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,12 +24,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".UniList" />
+        <activity android:name=".Health"/>
+        <activity android:name=".Visa" />
+
         <activity android:name=".Home_fragment" />
         <activity android:name=".Accomodation_fragment" />
-        <activity android:name=".Search_fragment" />
-        <activity android:name=".Scholar" />
         <activity android:name=".Login_fragment" />
-        <activity android:name=".Email_fragment" />
         <activity android:name=".Apply" />
 
         <meta-data
