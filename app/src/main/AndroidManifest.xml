@@ -24,7 +24,6 @@
         <activity android:name=".Register" />
         <activity android:name=".UniList" />
         <activity android:name=".Maritime" />
-        <activity android:name=".Artistic" />
         <activity android:name=".University_collage" />
         <activity android:name=".MainActivity">
             <intent-filter>
