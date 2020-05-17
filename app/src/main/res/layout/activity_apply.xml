@@ -1,53 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<androidx.core.widget.NestedScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 
 
-    <TextView
-        android:id="@+id/applyNow_textview"
-        android:layout_width="347dp"
-        android:layout_height="64dp"
-        android:layout_margin="30dp"
-        android:gravity="center"
-        android:text="@string/howToApply"
-        android:textColor="@color/Light_Yellow"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        <TextView
+            android:id="@+id/applyNow_textview"
+            android:layout_width="347dp"
+            android:layout_height="64dp"
+            android:layout_margin="30dp"
+            android:gravity="center"
+            android:text="@string/howToApply"
+            android:textColor="@color/Light_Yellow"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.023" />
 
-    <ImageButton
-        android:id="@+id/imageButton_optagelse"
-        android:layout_width="233dp"
-        android:layout_height="89dp"
-        android:padding="0dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.186"
-        app:srcCompat="@drawable/optagelse" />
+        <ImageButton
+            android:id="@+id/imageButton_optagelse"
+            android:layout_width="233dp"
+            android:layout_height="89dp"
+            android:padding="0dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.186"
+            app:srcCompat="@drawable/optagelse" />
 
-    <TextView
-        android:id="@+id/optagelseText"
-        android:layout_width="337dp"
-        android:layout_height="404dp"
-        android:layout_margin="8dp"
-        android:text="@string/optagelseDk"
+        <TextView
+            android:id="@+id/optagelseText"
+            android:layout_width="337dp"
+            android:layout_height="404dp"
+            android:layout_margin="8dp"
+            android:text="@string/optagelseDk"
 
-        android:textAlignment="center"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.862" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+            android:textAlignment="center"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.862" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
