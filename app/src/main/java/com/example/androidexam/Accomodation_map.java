@@ -15,8 +15,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class Accomodation_map extends Fragment implements OnMapReadyCallback  {
-    GoogleMap mapAPI;
-    SupportMapFragment mapFragment;
+    private GoogleMap mapAPI;
+    private SupportMapFragment mapFragment;
 
     public Accomodation_map() {
         // Required empty public constructor

@@ -10,9 +10,6 @@ import android.widget.ImageButton;
 import androidx.fragment.app.Fragment;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class Accomodation_life extends Fragment {
 
     ImageButton visaButton, healthButton;

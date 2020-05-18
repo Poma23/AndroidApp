@@ -17,10 +17,7 @@ import androidx.fragment.app.Fragment;
 public class Accomodation_work extends Fragment {
     Button jobsearch;
 
-    public Accomodation_work() {
-        // Required empty public constructor
-    }
-
+    public Accomodation_work() { }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,8 +36,6 @@ public class Accomodation_work extends Fragment {
                 startActivity(intent);
             }
         });
-
-
    return view;
 
     }

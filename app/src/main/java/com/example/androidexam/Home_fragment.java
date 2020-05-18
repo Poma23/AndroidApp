@@ -4,28 +4,39 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+
+import com.example.androidexam.Model.Home_Model;
+import com.example.androidexam.ViewModels.Home_viewModel;
 
 public class Home_fragment extends Fragment {
-    Button logout;
 
-    @Nullable
-    @Override
-    //show the fragment we are in:
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        TextView title= view.findViewById(R.id.homeTitle);
+        TextView text= view.findViewById(R.id.homeLongText);
+        ImageView image= view.findViewById(R.id.homeImage);
+        Home_viewModel homeViewModel = new ViewModelProvider(this).get(Home_viewModel.class);
+
+        homeViewModel.getHome().observe(getActivity(), new Observer< Home_Model >() {
+            @Override
+            public void onChanged(Home_Model home_model) {
+               homeViewModel.getHome(); }
+        });
         return view;
     }
-
-
-
 }
+
+
 
 
 //***********************************************Video************************************************************/*
