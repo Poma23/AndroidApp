@@ -25,6 +25,7 @@
 
 
     <TextView
+        android:id="@+id/studyOptionText"
         android:layout_width="354dp"
         android:layout_height="115dp"
         android:padding="8dp"
@@ -39,7 +40,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/studyOptionText2"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:padding="8dp"

@@ -14,13 +14,14 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/workImage"
             android:layout_width="match_parent"
             android:layout_height="146dp"
             android:scaleType="fitXY"
             android:src="@drawable/workindenmark" />
 
        <TextView
+           android:id="@+id/workText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="30sp"
@@ -29,7 +30,7 @@
             android:textColor="@color/White" />
 
         <Button
-            android:id="@+id/jobsearch"
+            android:id="@+id/workJobsearch"
             android:layout_width="188dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

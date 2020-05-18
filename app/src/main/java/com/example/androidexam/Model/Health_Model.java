@@ -1,13 +1,17 @@
 package com.example.androidexam.Model;
 
+import android.widget.Button;
+
 public class Health_Model {
     private String title1, title2, text1, text2;
+    private Button button;
 
-    public Health_Model(String title1, String title2, String text1, String text2) {
+    public Health_Model(String title1, String title2, String text1, String text2, Button button) {
         this.title1 = title1;
         this.title2 = title2;
         this.text1 = text1;
         this.text2 = text2;
+        this.button = button;
     }
 
     public String getTitle1() {
@@ -41,6 +45,8 @@ public class Health_Model {
     public void setText2(String text2) {
         this.text2 = text2;
     }
+
+    public Button getButton() { return button; }
 
 
 }
