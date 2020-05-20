@@ -44,32 +44,34 @@
 
     <ImageButton
         android:id="@+id/imgVisa"
-        android:layout_width="165dp"
-        android:layout_height="137dp"
+        android:layout_width="135dp"
+        android:layout_height="107dp"
         android:layout_gravity="center"
+        android:padding="0dp"
         android:scaleType="centerCrop"
         android:src="@drawable/visas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintHorizontal_bias="0.123"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/livingInDk_Visas"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
         android:id="@+id/imgHealth"
-        android:layout_width="165dp"
-        android:layout_height="137dp"
+        android:layout_width="135dp"
+        android:layout_height="107dp"
         android:layout_gravity="center"
         android:layout_marginBottom="100dp"
+        android:padding="0dp"
         android:scaleType="centerCrop"
         android:src="@drawable/health"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.934"
+        app:layout_constraintHorizontal_bias="0.887"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/health"
-        app:layout_constraintVertical_bias="0.053" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/health"
