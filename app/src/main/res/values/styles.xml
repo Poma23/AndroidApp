@@ -2,10 +2,14 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
+
+    <style name="LoginTheme" parent= "FirebaseUI">
+        <item name="android:windowBackground">@drawable/fb2</item>"
+    </style>
+
 
 </resources>

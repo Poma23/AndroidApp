@@ -48,7 +48,7 @@ public class Login_fragment extends Fragment {
             startActivityForResult(
                     AuthUI.getInstance().
                             createSignInIntentBuilder().
-                            setAvailableProviders(providers).setIsSmartLockEnabled(false).
+                            setAvailableProviders(providers).setIsSmartLockEnabled(false).setTheme(R.style.LoginTheme).
                             build(), RC_SIGN_IN);
         }
 
