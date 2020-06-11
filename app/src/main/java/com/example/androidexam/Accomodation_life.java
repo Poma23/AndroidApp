@@ -32,7 +32,7 @@ public class Accomodation_life extends Fragment {
 
         visaButton = view.findViewById(R.id.imgVisa);
         healthButton = view.findViewById(R.id.imgHealth);
-        title = view.findViewById(R.id.lifeTitle);
+       // title = view.findViewById(R.id.lifeTitle);
         text = view.findViewById(R.id.lifeText);
         lifeViewModel = new ViewModelProvider(this).get(AccomodationLife_ViewModel.class);
         lifeViewModel.getLifeModel().observe(getActivity(), new Observer< AccomodationLife_Model >() {

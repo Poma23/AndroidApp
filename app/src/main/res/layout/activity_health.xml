@@ -13,7 +13,7 @@
         android:fontFamily="@font/aclonica"
         android:text="Health and Safety"
         android:textColor="@color/Light_Yellow"
-        android:textSize="35sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -30,6 +30,7 @@
         android:layout_marginLeft="30sp"
         android:text="@string/Text_Health"
         android:textSize="16sp"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.533"
@@ -43,28 +44,31 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/aclonica"
         android:text="Healthcare"
+        android:textAlignment="center"
         android:textColor="#80FF00"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.117"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.339" />
+        app:layout_constraintVertical_bias="0.349" />
 
     <TextView
         android:id="@+id/healthText2"
-        android:layout_width="405dp"
-        android:layout_height="209dp"
+        android:layout_width="342dp"
+        android:layout_height="213dp"
         android:layout_margin="30sp"
         android:padding="30sp"
         android:text="@string/healtcare"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.551" />
+        app:layout_constraintVertical_bias="0.621" />
 
     <Button
         android:id="@+id/button_link_health"
@@ -75,8 +79,7 @@
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.778" />
+        app:layout_constraintVertical_bias="0.859" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,14 +19,11 @@ import static android.app.Activity.RESULT_OK;
 
 public class Login_fragment extends Fragment {
 
-
-    private FirebaseAuth _mFirebaseAuth;
-    private FirebaseUser user;
     private FirebaseAuth.AuthStateListener _mAuthListener;
     public static final int RC_SIGN_IN = 10;
 
     // Choose authentication providers
-    List< AuthUI.IdpConfig > providers = Arrays.asList(
+    List<AuthUI.IdpConfig> providers = Arrays.asList(
             new AuthUI.IdpConfig.EmailBuilder().build(),
             new AuthUI.IdpConfig.PhoneBuilder().build(),
             new AuthUI.IdpConfig.GoogleBuilder().build()
@@ -36,8 +33,8 @@ public class Login_fragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);
-        _mFirebaseAuth = FirebaseAuth.getInstance();
-        user = _mFirebaseAuth.getCurrentUser();
+        FirebaseAuth _mFirebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = _mFirebaseAuth.getCurrentUser();
 
         if (user != null) {
             Toast.makeText(getActivity(), "welcome, You are already logged in",
@@ -48,10 +45,11 @@ public class Login_fragment extends Fragment {
             startActivityForResult(
                     AuthUI.getInstance().
                             createSignInIntentBuilder().
-                            setAvailableProviders(providers).setIsSmartLockEnabled(false).setTheme(R.style.LoginTheme).
+                            setAvailableProviders(providers).
+                            setIsSmartLockEnabled(false).
+                            setLogo(R.drawable.fb).
                             build(), RC_SIGN_IN);
         }
-
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {

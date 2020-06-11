@@ -38,7 +38,10 @@ public class Health extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String action = Intent.ACTION_VIEW;
-                Uri uri = Uri.parse("https://www.nyidanmark.dk");
+                Uri uri = Uri.parse("https://www.sum.dk/English/~/media/Filer%20-%20Publikationer_i_pdf/2016/" +
+                        "Healthcare-in-dk-16-dec/Healthcare-english-V16-dec.ashx#:~:text=The%20Danish%20healthcare%20system%20is," +
+                        "are%20financed%20by%20general%20taxes.&text=Find%20more%20information%20about%20Denmark%20on%20www.denmark.dk.");
+                //("https://www.nyidanmark.dk");
                 Intent intent = new Intent(action, uri);
                 startActivity(intent);
             }

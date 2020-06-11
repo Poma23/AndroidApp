@@ -23,13 +23,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ProfileActivity" />
         <activity android:name=".UniList" />
         <activity android:name=".Health"/>
         <activity android:name=".Visa" />
-        <activity android:name=".Home_fragment" />
-        <activity android:name=".Accomodation_fragment" />
-        <activity android:name=".Login_fragment" />
         <activity android:name=".Apply" />
 
         <meta-data

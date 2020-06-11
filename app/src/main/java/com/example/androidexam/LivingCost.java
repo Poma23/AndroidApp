@@ -1,16 +1,16 @@
 package com.example.androidexam;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class LivingCost extends AppCompatActivity {
 
     Button googleSearchButton;
     EditText googleText;
-    //BookViewModel bookViewModel;
+   // BookViewModel bookViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,9 @@ public class LivingCost extends AppCompatActivity {
 
             }
         });
-*/
+
+ */
+
 
     }
 }

@@ -1,5 +1,6 @@
 package com.example.androidexam;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -12,8 +13,6 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.firebase.ui.auth.AuthUI;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -36,7 +35,6 @@ public class MainActivity extends AppCompatActivity
         // to listen to our navigation events we need a reference to nv:
         NavigationView navigationView = findViewById(R.id.navigationView);
         navigationView.setNavigationItemSelectedListener(this);
-
 
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
@@ -63,7 +61,7 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.navbar_home:
                 getSupportFragmentManager().beginTransaction()
-                      .replace(R.id.fragment_container, new Home_fragment()).commit();
+                        .replace(R.id.fragment_container, new Home_fragment()).commit();
                 break;
             case R.id.navbar_login:
                 getSupportFragmentManager().beginTransaction()
@@ -83,19 +81,17 @@ public class MainActivity extends AppCompatActivity
                         .replace(R.id.fragment_container, new ApplicationDeadline_fragment()).commit();
                 break;
             case R.id.navbar_logOut:
-                if(AuthUI.getInstance() != null) {
+                if (AuthUI.getInstance() != null) {
                     AuthUI.getInstance().signOut(this).addOnCompleteListener(
-                            new OnCompleteListener< Void >() {
-                                @Override
-                                public void onComplete(@NonNull Task< Void > task) {
-                                    Toast.makeText(getApplicationContext(),"You are now signed out",
-                                            Toast.LENGTH_LONG).show();
-                                    finish();
-                                }
-                            }
-                    );
-                }else
-                {Toast.makeText(getApplicationContext(), " You are not logged in yet", Toast.LENGTH_SHORT).show();}
+                            task -> {
+                                Toast.makeText(getApplicationContext(), "You are now signed out",
+                                        Toast.LENGTH_LONG).show();
+                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                finish();
+                            });
+                } else {
+                    Toast.makeText(getApplicationContext(), " You are not logged in yet", Toast.LENGTH_SHORT).show();
+                }
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);
@@ -111,106 +107,3 @@ public class MainActivity extends AppCompatActivity
         }
     }
 }
-
-//*********************************************************************************************//
-
-
-
-
-
-
-
-
-/*        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-
-
-
-        //reference to the top navigation
-        NavigationView topNav= findViewById(R.id.drawer_layout);
-        //pass the listener created below to my top navigation
-        //Called when an item in the navigation menu is selected
-        topNav.setNavigationItemSelectedListener(topNavListener); */
-
-
-//reference to the bottomNavigation
-//   BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
-//pass the listener created below to my navigation
-//   bottomNav.setOnNavigationItemSelectedListener(navListener);
-// }
-
-//*******************************************ButtomNavigation*************************************************/
-
-
-//react to the clicks on the items
-  /*
-    BottomNavigationView.OnNavigationItemSelectedListener navListener =
-            new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-
-                //get the item selected to switch inbetween
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                    //reference to our fragment
-                    Fragment selectedFragment = null;
-
-                    switch (item.getItemId()) {
-                        case R.id.nav_home:
-                            selectedFragment = new Home_fragment();
-                            break;
-
-                        case R.id.nav_mail:
-                            selectedFragment = new Email_fragment();
-                            break;
-
-                        case R.id.nav_search:
-                            selectedFragment = new Search_fragment();
-                            break;
-                    }
-                    getSupportFragmentManager().beginTransaction().
-                            replace(R.id.fragment_container, selectedFragment).commit();
-
-                    return true; //because we want to select the item
-
-                }
-            };
-}
-
-
-//****************************************TopNavigation****************************************/
-/*
-    //react to the clicks on the items
-    private NavigationView.OnNavigationItemSelectedListener topNavListener =
-            new NavigationView.OnNavigationItemSelectedListener() {
-                @Override
-
-                //get the item selected to switch inbetween
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                    //reference to our fragment
-                    Fragment fragmentTopNav = null;
-
-                    switch (item.getItemId()){
-                        case R.id.navbar_login:
-                            fragmentTopNav = new Login_fragment();
-                            break;
-
-                       /* case R.id.nav_accomodation:
-                            fragmentTopNav = new Accomodation_fragment();
-                            break;*/
- /*                   }
-                   getSupportFragmentManager().beginTransaction().
-                            replace(R.id.fragment_container, fragmentTopNav).commit();
-
-                    return true; //because we want to select the item
-
-                }
-            };
-}
-  */
-
-
-
-
-
