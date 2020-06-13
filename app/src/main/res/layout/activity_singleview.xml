@@ -7,11 +7,11 @@
     android:layout_marginEnd="10dp"
     android:layout_marginStart="10dp"
     android:layout_marginTop="10dp">
-    // the single view
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:padding="8dp"
+        android:orientation="vertical">
         <TextView
             android:id="@+id/rv_title"
             android:layout_width="wrap_content"
@@ -26,6 +26,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/rv_title"
             android:text="Description"/>
-    </RelativeLayout>
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>

@@ -18,23 +18,25 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.Espresso.pressBack;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
 import static androidx.test.espresso.matcher.ViewMatchers.withContentDescription;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withParent;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.is;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class UI_Test {
+public class working_living {
 
     @Rule
     public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<>(MainActivity.class);
 
     @Test
-    public void uI_Test() {
+    public void working_living() {
         ViewInteraction appCompatImageButton = onView(
                 allOf(withContentDescription("Open drawerK"),
                         childAtPosition(
@@ -56,79 +58,53 @@ public class UI_Test {
                         isDisplayed()));
         navigationMenuItemView.perform(click());
 
-        ViewInteraction appCompatImageButton2 = onView(
-                allOf(withContentDescription("Open drawerK"),
+        ViewInteraction tabView = onView(
+                allOf(withContentDescription("Work"),
                         childAtPosition(
-                                allOf(withId(R.id.toolbar),
-                                        childAtPosition(
-                                                withClassName(is("android.widget.LinearLayout")),
-                                                0)),
+                                childAtPosition(
+                                        withId(R.id.tablayout),
+                                        0),
                                 1),
+                        isDisplayed()));
+        tabView.perform(click());
+
+        ViewInteraction tabView2 = onView(
+                allOf(withContentDescription("Map"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(R.id.tablayout),
+                                        0),
+                                2),
+                        isDisplayed()));
+        tabView2.perform(click());
+
+        ViewInteraction tabView3 = onView(
+                allOf(withContentDescription("Life"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(R.id.tablayout),
+                                        0),
+                                0),
+                        isDisplayed()));
+        tabView3.perform(click());
+
+        ViewInteraction appCompatImageButton2 = onView(
+                allOf(withId(R.id.imgVisa),
+                        childAtPosition(
+                                withParent(withId(R.id.viewPager)),
+                                0),
                         isDisplayed()));
         appCompatImageButton2.perform(click());
 
-        ViewInteraction navigationMenuItemView2 = onView(
-                allOf(childAtPosition(
-                        allOf(withId(R.id.design_navigation_view),
-                                childAtPosition(
-                                        withId(R.id.navigationView),
-                                        0)),
-                        4),
-                        isDisplayed()));
-        navigationMenuItemView2.perform(click());
+        pressBack();
 
         ViewInteraction appCompatImageButton3 = onView(
-                allOf(withContentDescription("Open drawerK"),
+                allOf(withId(R.id.imgHealth),
                         childAtPosition(
-                                allOf(withId(R.id.toolbar),
-                                        childAtPosition(
-                                                withClassName(is("android.widget.LinearLayout")),
-                                                0)),
+                                withParent(withId(R.id.viewPager)),
                                 1),
                         isDisplayed()));
         appCompatImageButton3.perform(click());
-
-        ViewInteraction navigationMenuItemView3 = onView(
-                allOf(childAtPosition(
-                        allOf(withId(R.id.design_navigation_view),
-                                childAtPosition(
-                                        withId(R.id.navigationView),
-                                        0)),
-                        5),
-                        isDisplayed()));
-        navigationMenuItemView3.perform(click());
-
-        ViewInteraction appCompatImageButton4 = onView(
-                allOf(withContentDescription("Open drawerK"),
-                        childAtPosition(
-                                allOf(withId(R.id.toolbar),
-                                        childAtPosition(
-                                                withClassName(is("android.widget.LinearLayout")),
-                                                0)),
-                                1),
-                        isDisplayed()));
-        appCompatImageButton4.perform(click());
-
-        ViewInteraction navigationMenuItemView4 = onView(
-                allOf(childAtPosition(
-                        allOf(withId(R.id.design_navigation_view),
-                                childAtPosition(
-                                        withId(R.id.navigationView),
-                                        0)),
-                        6),
-                        isDisplayed()));
-        navigationMenuItemView4.perform(click());
-
-        ViewInteraction appCompatImageButton5 = onView(
-                allOf(withContentDescription("Open drawerK"),
-                        childAtPosition(
-                                allOf(withId(R.id.toolbar),
-                                        childAtPosition(
-                                                withClassName(is("android.widget.LinearLayout")),
-                                                0)),
-                                1),
-                        isDisplayed()));
-        appCompatImageButton5.perform(click());
     }
 
     private static Matcher<View> childAtPosition(

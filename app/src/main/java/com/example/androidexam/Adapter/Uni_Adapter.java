@@ -14,9 +14,8 @@ import com.example.androidexam.R;
 import java.util.ArrayList;
 import java.util.List;
 
-// so the recyclre view know that, Uniholder is what we want to use
 public class Uni_Adapter extends RecyclerView.Adapter< Uni_Adapter.UniHolder > {
-    // if we dont put the list to arraylist it will be null;
+    // put the list to arraylist;
     private List< UniListModel > uniList = new ArrayList<>();
 
     @NonNull
